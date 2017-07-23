@@ -1,0 +1,25 @@
+
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Push Notification POC by Madan</title>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+<--
+curl -X POST -H "Authorization: key=AAAAe_fmmYo:APA91bEd7_WnIARtZ1mZiqw0kQ5PRdbx3lmMRRBnacUhJBkzcgsuzGUzleZw4AyT06fhWQqD6fS5I7WF4i24Von3u42qNVFET5-qzq2DlbOW0sYiY85DvC6vy2jPjZNnUDPLEBw_fyeL" -H "Content-Type: application/json" -d '{"notification": {"title": "Portugal vs. Denmark","body": "5 to 1","icon": "firebase-logo.png","click_action": "https://webpushnotificationpoc.firebaseapp.com/"} "to":"fKneIKpsBu4:APA91bFSEu397cyFSvcgpZCeg_ZuiZ_tgQP96HqROLRzlPEFWeS7R9H7jEt31oyjwrJ1t-EjIQeH_kfGZGtQL_3aqP2HVg_csKVGKi39I4B91WTESN_OE9uZ2uonIVepG1qUao0G_Bg2"}' "https://fcm.googleapis.com/fcm/send"
+
+curl -X POST -H "Authorization: key=AAAAe_fmmYo:APA91bEd7_WnIARtZ1mZiqw0kQ5PRdbx3lmMRRBnacUhJBkzcgsuzGUzleZw4AyT06fhWQqD6fS5I7WF4i24Von3u42qNVFET5-qzq2DlbOW0sYiY85DvC6vy2jPjZNnUDPLEBw_fyeL" -H "Content-Type: application/json" -d '{"notification": {"title": "Portugal vs. Denmark","body": "5 to 1","icon": "firebase-logo.png"} "to":"e82HuPxc4xw:APA91bEnGl84oIkULticJk_PbOUKnOB9dv0ZXi0HQU6F7R63i2ARz5O66CexuUZUplLDeWQuAA-LHcgsN7A0hUAv5tlxWLhwTnD3FTFnJWqUiiZxbWCXa0me714ys_sH5MqjabXt2edc"}' "https://fcm.googleapis.com/fcm/send"
+
+
+!-->
+</head>
+
+<body>
+    hello world
+
+</body>
+
+
+</html>

@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
+\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\c87059;\cssrgb\c100000\c100000\c100000;\csgray\c0;
+\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Web push notification \
+\
+steps\
+\
+https://firebase.google.com/docs/web/setup \
+\
+create firebase projects\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://console.firebase.google.com/?pli=1"}}{\fldrslt \cf0 https://console.firebase.google.com/?pli=1}}\
+\
+\
+hosting your app on firebase\
+{\field{\*\fldinst{HYPERLINK "https://firebase.google.com/docs/hosting/quickstart"}}{\fldrslt https://firebase.google.com/docs/hosting/quickstart}}\
+\
+dCjorV-xIck:APA91bHCGKE27NJG56X0pnhNTScii7mANa_1UwkCXkqVqkHZ-D_4cr1CJhkvdbeGeVGPfY4oZRjBrrCFczh61NE7hbxBcM17iGCWx0TCgR2VVEdasEMy9RSgnn5zODvJJHtggF6oJQnr\
+\
+\
+curl -X POST -H "Authorization: key=
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 AAAAe_fmmYo:APA91bEd7_WnIARtZ1mZiqw0kQ5PRdbx3lmMRRBnacUhJBkzcgsuzGUzleZw4AyT06fhWQqD6fS5I7WF4i24Von3u42qNVFET5-qzq2DlbOW0sYiY85DvC6vy2jPjZNnUDPLEBw_fyeL
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 " -H "Content-Type: application/json" -d '\{\
+  "notification": \{\
+    "title": "Portugal vs. Denmark",\
+    "body": "5 to 1",\
+    "icon": "firebase-logo.png",\
+    "click_action": "http://localhost:5000\'94\
+  \},\
+  "to": "dCjorV-xIck:APA91bHCGKE27NJG56X0pnhNTScii7mANa_1UwkCXkqVqkHZ-D_4cr1CJhkvdbeGeVGPfY4oZRjBrrCFczh61NE7hbxBcM17iGCWx0TCgR2VVEdasEMy9RSgnn5zODvJJHtggF6oJQnr"\
+\}' "https://fcm.googleapis.com/fcm/send"\
+\
+\
+messaging.setBackgroundMessageHandler(function(payload) \{\
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);\
+  // Customize notification here\
+  const notificationTitle = 'Background Message Title';\
+  const notificationOptions = \{\
+    body: 'Background Message body.',\
+    icon: '/firebase-logo.png'\
+  \};\
+\
+  return self.registration.showNotification(notificationTitle,\
+      notificationOptions);\
+\});\
+\
+\
+  <script defer src="/__/firebase/4.1.3/firebase-app.js"></script>\
+    <!-- include only the Firebase features as you need -->\
+    <script defer src="/__/firebase/4.1.3/firebase-auth.js"></script>\
+    <script defer src="/__/firebase/4.1.3/firebase-database.js"></script>\
+    <script defer src="/__/firebase/4.1.3/firebase-messaging.js"></script>\
+    <script defer src="/__/firebase/4.1.3/firebase-storage.js"></script>\
+    <!-- initialize the SDK after all desired features are loaded -->\
+    <script defer src="/__/firebase/init.js"></script>\
+\
+\
+\
+curl success one : \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf4 \cb5 \CocoaLigature0 url -X POST -H "Authorization: key=AAAAe_fmmYo:APA91bEd7_WnIARtZ1mZiqw0kQ5PRdbx3lmMRRBnacUhJBkzcgsuzGUzleZw4AyT06fhWQqD6fS5I7WF4i24Von3u42qNVFET5-qzq2DlbOW0sYiY85DvC6vy2jPjZNnUDPLEBw_fyeL" -H "Content-Type: application/json" -d '\{"notification": \{"title": "Portugal vs. Denmark","body": "5 to 1","icon": "firebase-logo.png"\} "to":"fyvj5IC7mLk:APA91bGNrCLwF76IoQ-irP8F8lLQhIQ-hA8KfaKt8N9mqOjFbVTWJc2dBmbwnEkXc0AoN6pxKv3LT8CJNXBZIDM0cQh3aBpRm003u5qMOkVi0wh1-ovMNPx2_Ey4qZCdQ2n5ffi64X__"\}' "https://fcm.googleapis.com/fcm/send"
+\f0\fs24 \cf0 \cb1 \CocoaLigature1 \
+}
